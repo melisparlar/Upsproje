@@ -6,4 +6,6 @@
     <string name="genel_toplam">Genel Toplam:</string>
     <string name="sepet">Sepet</string>
     <string name="Menu">Menü</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
