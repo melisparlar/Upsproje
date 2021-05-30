@@ -15,10 +15,13 @@ import com.example.yemekler.model.Food
 import com.example.yemekler.viewModel.YemekMenuFragmentViewModel
 import com.squareup.picasso.Picasso
 
-class YemekAdapter(private var myContext:Context, private var YemekListesi: List<Food>, var viewModel: YemekMenuFragmentViewModel)
+class YemekAdapter(private var myContext:Context,
+                   private var YemekListesi: List<Food>,
+                   var viewModel: YemekMenuFragmentViewModel)
     :RecyclerView.Adapter<YemekAdapter.CardViewDesignHolder>(){
 
-    inner class CardViewDesignHolder(yemekTasarimBinding: YemekTasarimBinding) : RecyclerView.ViewHolder(yemekTasarimBinding.root){
+    inner class CardViewDesignHolder(yemekTasarimBinding: YemekTasarimBinding) :
+        RecyclerView.ViewHolder(yemekTasarimBinding.root){
 
         var yemekTasarimBinding: YemekTasarimBinding
 

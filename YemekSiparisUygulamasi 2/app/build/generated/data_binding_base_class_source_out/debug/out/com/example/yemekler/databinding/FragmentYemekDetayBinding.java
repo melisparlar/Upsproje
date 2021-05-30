@@ -13,6 +13,7 @@ import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import com.example.yemekler.R;
+import com.example.yemekler.fragment.YemekDetayFragment;
 import com.example.yemekler.model.Food;
 import java.lang.Deprecated;
 import java.lang.Object;
@@ -36,6 +37,9 @@ public abstract class FragmentYemekDetayBinding extends ViewDataBinding {
   @Bindable
   protected String mDetayToolbar;
 
+  @Bindable
+  protected YemekDetayFragment mYemekDetayFragment;
+
   protected FragmentYemekDetayBinding(Object _bindingComponent, View _root, int _localFieldCount,
       ImageView imageView, TextView textView, TextView textView2, Toolbar toolbarMenu) {
     super(_bindingComponent, _root, _localFieldCount);
@@ -57,6 +61,13 @@ public abstract class FragmentYemekDetayBinding extends ViewDataBinding {
   @Nullable
   public String getDetayToolbar() {
     return mDetayToolbar;
+  }
+
+  public abstract void setYemekDetayFragment(@Nullable YemekDetayFragment yemekDetayFragment);
+
+  @Nullable
+  public YemekDetayFragment getYemekDetayFragment() {
+    return mYemekDetayFragment;
   }
 
   @NonNull

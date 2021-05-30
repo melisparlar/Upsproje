@@ -32,10 +32,11 @@ class YemekMenuFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         tasarim = DataBindingUtil.inflate(inflater, R.layout.fragment_yemek_menu, container, false)
+        tasarim.yemekFragment = this
         tasarim.toolbar = "Menü"
         (activity as AppCompatActivity).setSupportActionBar(tasarim.toolbarMenu)
 
-        viewModel.YemekListesi.observe(viewLifecycleOwner,{ i->
+        viewModel.yemekListesi.observe(viewLifecycleOwner,{ i->
             adapter = YemekAdapter(requireContext(), i, viewModel)
             tasarim.yemekAdapter = adapter
         })
@@ -53,6 +54,6 @@ class YemekMenuFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        viewModel.tumYemekler()
+        viewModel.yemekleriYukle()
     }
 }

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/ilginbalkan/Desktop/yemek/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-w480dp-port-v13/values-w480dp-port-v13.xml",
+            "outputFile": "C:\\AndroidProjects\\Upsproje\\YemekSiparisUygulamasi 2\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w480dp-port-v13\\values-w480dp-port-v13.xml",
             "map": [
                 {
-                    "source": "/Users/ilginbalkan/.gradle/caches/transforms-2/files-2.1/6927ee2c7c83df57add1b0afde3e1a15/material-1.2.1/res/values-w480dp-port-v13/values-w480dp-port-v13.xml",
+                    "source": "C:\\Users\\tekez\\.gradle\\caches\\transforms-2\\files-2.1\\dece9e2800c04cf7a26aa0e0279e9508\\material-1.2.1\\res\\values-w480dp-port-v13\\values-w480dp-port-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",

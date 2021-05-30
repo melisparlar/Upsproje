@@ -9,21 +9,22 @@ import com.example.yemekler.model.Food
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.Volley
+import com.example.yemekler.repository.YemeklerDaoRepository
 import org.json.JSONException
 import org.json.JSONObject
 
 class YemekMenuFragmentViewModel: ViewModel() {
 
-
-    var YemekListesi = MutableLiveData<List<Food>>()
+    var yemekListesi = MutableLiveData<List<Food>>()
+    private val ydaor = YemeklerDaoRepository()
 
     init {
-
-        tumYemekler()
+        yemekleriYukle()
+        yemekListesi = ydaor.yemekleriGetir()
     }
 
-    fun tumYemekler() {
-
+    fun yemekleriYukle() {
+        ydaor.tumYemekleriAl()
     }
 
 }

@@ -14,6 +14,7 @@ import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.yemekler.R;
 import com.example.yemekler.adapter.YemekAdapter;
+import com.example.yemekler.fragment.YemekMenuFragment;
 import java.lang.Deprecated;
 import java.lang.Object;
 
@@ -32,6 +33,9 @@ public abstract class FragmentYemekMenuBinding extends ViewDataBinding {
 
   @Bindable
   protected YemekAdapter mYemekAdapter;
+
+  @Bindable
+  protected YemekMenuFragment mYemekFragment;
 
   protected FragmentYemekMenuBinding(Object _bindingComponent, View _root, int _localFieldCount,
       ConstraintLayout ConstraitLayout, RecyclerView RecyclerViewYemek, Toolbar toolbarMenu) {
@@ -53,6 +57,13 @@ public abstract class FragmentYemekMenuBinding extends ViewDataBinding {
   @Nullable
   public YemekAdapter getYemekAdapter() {
     return mYemekAdapter;
+  }
+
+  public abstract void setYemekFragment(@Nullable YemekMenuFragment yemekFragment);
+
+  @Nullable
+  public YemekMenuFragment getYemekFragment() {
+    return mYemekFragment;
   }
 
   @NonNull

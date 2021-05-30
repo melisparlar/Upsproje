@@ -8,6 +8,7 @@
     <data>
         <variable name="yemek" type="com.example.yemekler.model.Food"/>
         <variable name="detayToolbar" type="String" />
+        <variable name="yemekDetayFragment" type="com.example.yemekler.fragment.YemekDetayFragment" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

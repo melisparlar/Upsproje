@@ -1,14 +1,14 @@
 [
     {
-        "merged": "/Users/ilginbalkan/Desktop/yemek/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/yemek_tasarim.xml",
-        "source": "/Users/ilginbalkan/Desktop/yemek/app/src/main/res/layout/yemek_tasarim.xml"
+        "merged": "C:\\AndroidProjects\\Upsproje\\YemekSiparisUygulamasi 2\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_yemek_detay.xml",
+        "source": "C:\\AndroidProjects\\Upsproje\\YemekSiparisUygulamasi 2\\app\\src\\main\\res\\layout\\fragment_yemek_detay.xml"
     },
     {
-        "merged": "/Users/ilginbalkan/Desktop/yemek/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_yemek_menu.xml",
-        "source": "/Users/ilginbalkan/Desktop/yemek/app/src/main/res/layout/fragment_yemek_menu.xml"
+        "merged": "C:\\AndroidProjects\\Upsproje\\YemekSiparisUygulamasi 2\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_yemek_menu.xml",
+        "source": "C:\\AndroidProjects\\Upsproje\\YemekSiparisUygulamasi 2\\app\\src\\main\\res\\layout\\fragment_yemek_menu.xml"
     },
     {
-        "merged": "/Users/ilginbalkan/Desktop/yemek/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_yemek_detay.xml",
-        "source": "/Users/ilginbalkan/Desktop/yemek/app/src/main/res/layout/fragment_yemek_detay.xml"
+        "merged": "C:\\AndroidProjects\\Upsproje\\YemekSiparisUygulamasi 2\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\yemek_tasarim.xml",
+        "source": "C:\\AndroidProjects\\Upsproje\\YemekSiparisUygulamasi 2\\app\\src\\main\\res\\layout\\yemek_tasarim.xml"
     }
 ]

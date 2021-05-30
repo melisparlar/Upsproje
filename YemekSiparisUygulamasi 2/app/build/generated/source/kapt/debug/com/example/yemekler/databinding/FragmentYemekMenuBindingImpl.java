@@ -41,7 +41,7 @@ public class FragmentYemekMenuBindingImpl extends FragmentYemekMenuBinding  {
     @Override
     public void invalidateAll() {
         synchronized(this) {
-                mDirtyFlags = 0x4L;
+                mDirtyFlags = 0x8L;
         }
         requestRebind();
     }
@@ -59,7 +59,10 @@ public class FragmentYemekMenuBindingImpl extends FragmentYemekMenuBinding  {
     @Override
     public boolean setVariable(int variableId, @Nullable Object variable)  {
         boolean variableSet = true;
-        if (BR.Toolbar == variableId) {
+        if (BR.yemekFragment == variableId) {
+            setYemekFragment((com.example.yemekler.fragment.YemekMenuFragment) variable);
+        }
+        else if (BR.Toolbar == variableId) {
             setToolbar((java.lang.String) variable);
         }
         else if (BR.YemekAdapter == variableId) {
@@ -71,10 +74,13 @@ public class FragmentYemekMenuBindingImpl extends FragmentYemekMenuBinding  {
             return variableSet;
     }
 
+    public void setYemekFragment(@Nullable com.example.yemekler.fragment.YemekMenuFragment YemekFragment) {
+        this.mYemekFragment = YemekFragment;
+    }
     public void setToolbar(@Nullable java.lang.String Toolbar) {
         this.mToolbar = Toolbar;
         synchronized(this) {
-            mDirtyFlags |= 0x1L;
+            mDirtyFlags |= 0x2L;
         }
         notifyPropertyChanged(BR.Toolbar);
         super.requestRebind();
@@ -82,7 +88,7 @@ public class FragmentYemekMenuBindingImpl extends FragmentYemekMenuBinding  {
     public void setYemekAdapter(@Nullable com.example.yemekler.adapter.YemekAdapter YemekAdapter) {
         this.mYemekAdapter = YemekAdapter;
         synchronized(this) {
-            mDirtyFlags |= 0x2L;
+            mDirtyFlags |= 0x4L;
         }
         notifyPropertyChanged(BR.YemekAdapter);
         super.requestRebind();
@@ -105,17 +111,17 @@ public class FragmentYemekMenuBindingImpl extends FragmentYemekMenuBinding  {
         java.lang.String toolbar = mToolbar;
         com.example.yemekler.adapter.YemekAdapter yemekAdapter = mYemekAdapter;
 
-        if ((dirtyFlags & 0x5L) != 0) {
+        if ((dirtyFlags & 0xaL) != 0) {
         }
-        if ((dirtyFlags & 0x6L) != 0) {
+        if ((dirtyFlags & 0xcL) != 0) {
         }
         // batch finished
-        if ((dirtyFlags & 0x6L) != 0) {
+        if ((dirtyFlags & 0xcL) != 0) {
             // api target 1
 
             this.RecyclerViewYemek.setAdapter(yemekAdapter);
         }
-        if ((dirtyFlags & 0x5L) != 0) {
+        if ((dirtyFlags & 0xaL) != 0) {
             // api target 1
 
             this.toolbarMenu.setTitle(toolbar);
@@ -126,9 +132,10 @@ public class FragmentYemekMenuBindingImpl extends FragmentYemekMenuBinding  {
     // dirty flag
     private  long mDirtyFlags = 0xffffffffffffffffL;
     /* flag mapping
-        flag 0 (0x1L): Toolbar
-        flag 1 (0x2L): YemekAdapter
-        flag 2 (0x3L): null
+        flag 0 (0x1L): yemekFragment
+        flag 1 (0x2L): Toolbar
+        flag 2 (0x3L): YemekAdapter
+        flag 3 (0x4L): null
     flag mapping end*/
     //end
 }

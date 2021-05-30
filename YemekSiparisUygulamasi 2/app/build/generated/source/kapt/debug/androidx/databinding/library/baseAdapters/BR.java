@@ -10,4 +10,8 @@ public class BR {
   public static final int detayToolbar = 3;
 
   public static final int yemek = 4;
+
+  public static final int yemekDetayFragment = 5;
+
+  public static final int yemekFragment = 6;
 }

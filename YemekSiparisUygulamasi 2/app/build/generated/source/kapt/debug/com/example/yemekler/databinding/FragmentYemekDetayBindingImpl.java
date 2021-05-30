@@ -47,7 +47,7 @@ public class FragmentYemekDetayBindingImpl extends FragmentYemekDetayBinding  {
     @Override
     public void invalidateAll() {
         synchronized(this) {
-                mDirtyFlags = 0x4L;
+                mDirtyFlags = 0x8L;
         }
         requestRebind();
     }
@@ -71,6 +71,9 @@ public class FragmentYemekDetayBindingImpl extends FragmentYemekDetayBinding  {
         else if (BR.detayToolbar == variableId) {
             setDetayToolbar((java.lang.String) variable);
         }
+        else if (BR.yemekDetayFragment == variableId) {
+            setYemekDetayFragment((com.example.yemekler.fragment.YemekDetayFragment) variable);
+        }
         else {
             variableSet = false;
         }
@@ -93,6 +96,9 @@ public class FragmentYemekDetayBindingImpl extends FragmentYemekDetayBinding  {
         notifyPropertyChanged(BR.detayToolbar);
         super.requestRebind();
     }
+    public void setYemekDetayFragment(@Nullable com.example.yemekler.fragment.YemekDetayFragment YemekDetayFragment) {
+        this.mYemekDetayFragment = YemekDetayFragment;
+    }
 
     @Override
     protected boolean onFieldChange(int localFieldId, Object object, int fieldId) {
@@ -112,7 +118,7 @@ public class FragmentYemekDetayBindingImpl extends FragmentYemekDetayBinding  {
         com.example.yemekler.model.Food yemek = mYemek;
         java.lang.String detayToolbar = mDetayToolbar;
 
-        if ((dirtyFlags & 0x5L) != 0) {
+        if ((dirtyFlags & 0x9L) != 0) {
 
 
 
@@ -121,15 +127,15 @@ public class FragmentYemekDetayBindingImpl extends FragmentYemekDetayBinding  {
                     yemekYemekResimAdi = yemek.getYemek_resim_adi();
                 }
         }
-        if ((dirtyFlags & 0x6L) != 0) {
+        if ((dirtyFlags & 0xaL) != 0) {
         }
         // batch finished
-        if ((dirtyFlags & 0x5L) != 0) {
+        if ((dirtyFlags & 0x9L) != 0) {
             // api target 1
 
             com.example.yemekler.adapter.YemekAdapterKt.setImageViewResource(this.imageView, yemekYemekResimAdi);
         }
-        if ((dirtyFlags & 0x6L) != 0) {
+        if ((dirtyFlags & 0xaL) != 0) {
             // api target 1
 
             this.toolbarMenu.setTitle(detayToolbar);
@@ -142,7 +148,8 @@ public class FragmentYemekDetayBindingImpl extends FragmentYemekDetayBinding  {
     /* flag mapping
         flag 0 (0x1L): yemek
         flag 1 (0x2L): detayToolbar
-        flag 2 (0x3L): null
+        flag 2 (0x3L): yemekDetayFragment
+        flag 3 (0x4L): null
     flag mapping end*/
     //end
 }
