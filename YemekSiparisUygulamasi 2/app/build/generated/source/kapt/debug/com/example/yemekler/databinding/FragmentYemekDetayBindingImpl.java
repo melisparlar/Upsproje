@@ -13,9 +13,7 @@ public class FragmentYemekDetayBindingImpl extends FragmentYemekDetayBinding  {
     private static final android.util.SparseIntArray sViewsWithIds;
     static {
         sIncludes = null;
-        sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.textView, 3);
-        sViewsWithIds.put(R.id.textView2, 4);
+        sViewsWithIds = null;
     }
     // views
     @NonNull
@@ -38,6 +36,8 @@ public class FragmentYemekDetayBindingImpl extends FragmentYemekDetayBinding  {
         this.imageView.setTag(null);
         this.mboundView0 = (androidx.constraintlayout.widget.ConstraintLayout) bindings[0];
         this.mboundView0.setTag(null);
+        this.textView.setTag(null);
+        this.textView2.setTag(null);
         this.toolbarMenu.setTag(null);
         setRootTag(root);
         // listeners
@@ -115,8 +115,10 @@ public class FragmentYemekDetayBindingImpl extends FragmentYemekDetayBinding  {
             mDirtyFlags = 0;
         }
         java.lang.String yemekYemekResimAdi = null;
+        int yemekYemekFiyat = 0;
         com.example.yemekler.model.Food yemek = mYemek;
         java.lang.String detayToolbar = mDetayToolbar;
+        java.lang.String yemekYemekAdi = null;
 
         if ((dirtyFlags & 0x9L) != 0) {
 
@@ -125,6 +127,10 @@ public class FragmentYemekDetayBindingImpl extends FragmentYemekDetayBinding  {
                 if (yemek != null) {
                     // read yemek.yemek_resim_adi
                     yemekYemekResimAdi = yemek.getYemek_resim_adi();
+                    // read yemek.yemek_fiyat
+                    yemekYemekFiyat = yemek.getYemek_fiyat();
+                    // read yemek.yemek_adi
+                    yemekYemekAdi = yemek.getYemek_adi();
                 }
         }
         if ((dirtyFlags & 0xaL) != 0) {
@@ -134,6 +140,8 @@ public class FragmentYemekDetayBindingImpl extends FragmentYemekDetayBinding  {
             // api target 1
 
             com.example.yemekler.adapter.YemekAdapterKt.setImageViewResource(this.imageView, yemekYemekResimAdi);
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.textView, yemekYemekAdi);
+            this.textView2.setText(yemekYemekFiyat);
         }
         if ((dirtyFlags & 0xaL) != 0) {
             // api target 1

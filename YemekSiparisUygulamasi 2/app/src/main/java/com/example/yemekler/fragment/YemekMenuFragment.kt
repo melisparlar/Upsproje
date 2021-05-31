@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
@@ -32,9 +33,12 @@ class YemekMenuFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         tasarim = DataBindingUtil.inflate(inflater, R.layout.fragment_yemek_menu, container, false)
-        tasarim.yemekFragment = this
+        //tasarim.yemekFragment = this
         tasarim.toolbar = "Menü"
         (activity as AppCompatActivity).setSupportActionBar(tasarim.toolbarMenu)
+
+        tasarim.RecyclerViewYemek.layoutManager = StaggeredGridLayoutManager(2,
+            StaggeredGridLayoutManager.VERTICAL)
 
         viewModel.yemekListesi.observe(viewLifecycleOwner,{ i->
             adapter = YemekAdapter(requireContext(), i, viewModel)
